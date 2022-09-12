@@ -1,1 +1,1 @@
-docker container run -p 8080:80 --name myWebPage -v html:/usr/share/nginx/html nginx
+docker container run -p 8080:80 --name myWebPage -v %cd%/html:/usr/share/nginx/html nginx
