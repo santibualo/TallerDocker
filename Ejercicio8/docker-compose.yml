@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  nginx:
+    image: nginx:latest
+    container_name: webserver
+    restart: unless-stopped
+    ports:
+      - 80:80
+      - 443:443
+  web1:
+    image: nicopaez/password-api:latest
+    container_name: web1
+    restart: unless-stopped
+    expose:
+      - 3000
+
+  web2:
+    image: nicopaez/password-api:latest
+    container_name: web2
+    restart: unless-stopped
+    expose:
+      - 6000
