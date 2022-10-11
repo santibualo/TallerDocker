@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: pingservice
+  labels:
+    name: pingservice
+spec:
+  type: NodePort
+  ports:
+    - port: 3306
+      nodePort: 30036
+      name: http
+  selector:
+    app.kubernetes.io/name: pingapp

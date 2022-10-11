@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: passapi
+  labels:
+    app: passapi
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: passapi
+  template:
+    metadata:
+      labels:
+        app: passapi
+    spec:
+      containers:
+      - name: passapi
+        image: nicopaez/password-api
+        ports:
+        - containerPort: 4567

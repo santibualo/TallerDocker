@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pingapp
+  labels:
+    app: pingapp
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: pingapp
+  template:
+    metadata:
+      labels:
+        app: pingapp
+    spec:
+      containers:
+      - name: pingapp
+        image: nicopaez/pingapp:2.1.0
+      env:
+    	- name: CONFIG
+      	  dir: config.yaml
+
+   volumes:
+    - name: config2
+      dir: ./config2.yml
+    - name: secrets
+	dir : secrets.yml

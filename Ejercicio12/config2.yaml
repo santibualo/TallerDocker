@@ -1,0 +1,9 @@
+kind: ConfigMap 
+apiVersion: v1 
+metadata:
+  name: example-configmap-2
+data:
+  
+  # Or set as complete file contents (even JSON!)
+  keys: | 
+    config.json = { "key1": "value1"}
